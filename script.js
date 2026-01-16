@@ -138,7 +138,7 @@ contactForm.addEventListener("submit", async (e) => {
   }
 
   try {
-    const res = await fetch("portfolio-amber-nine-66.vercel.app/message", {
+    const res = await fetch("https://portfolio-amber-nine-66.vercel.app/message", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, subject, message })
