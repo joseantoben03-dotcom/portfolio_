@@ -16,7 +16,7 @@ mongoose
   
 
 app.use('/', router)
-app.use('/health',(req,res)=>{
+app.get('/health',(req,res)=>{
   res.json({message:"Backend is running "})
 
 })
