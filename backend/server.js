@@ -16,4 +16,8 @@ mongoose
   
 
 app.use('/', router)
+app.use('/health',(req,res)=>{
+  res.json({message:"Backend is running "})
+
+})
 module.exports=app;
