@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph Antony Benedict J - Full Stack & Mobile Developer</title>
+    <title>Joseph Antony Benedict J — Full Stack & Mobile Developer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Certificate Modal -->
+    <div class="cert-modal" id="certModal">
+        <div class="cert-modal-inner">
+            <div class="cert-modal-header">
+                <span class="cert-modal-title" id="certModalTitle">Certificate</span>
+                <button class="cert-modal-close" id="certModalClose" aria-label="Close">✕</button>
+            </div>
+            <div class="cert-modal-body" id="certModalBody"></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-brand">
                 <h2>Joseph Antony Benedict J</h2>
@@ -33,55 +49,64 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Joseph Antony Benedict J</span></h1>
-                <p class="hero-subtitle">Full Stack & Mobile Developer building scalable web and mobile applications with MERN stack, Flutter, and Spring Boot</p>
-                <p class="hero-description">B.Tech IT Student | Aspiring SDE | 500+ LinkedIn Connections</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/joseantoben03-dotcom" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="mailto:joseantoben03@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <p class="hero-label">Available for Internships</p>
+            <h1 class="hero-title">
+                Joseph<br><em class="highlight">Antony Benedict</em>
+            </h1>
+            <p class="hero-subtitle">Full Stack &amp; Mobile Developer crafting scalable web and mobile applications with MERN stack, Flutter, and Spring Boot</p>
+            <p class="hero-description">B.Tech IT · Francis Xavier Engineering College · 500+ LinkedIn Connections</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary"><span>View Projects</span></a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/joseantoben03-dotcom" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:joseantoben03@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
         <div class="scroll-indicator">
             <div class="mouse"></div>
+            <span>Scroll</span>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <p class="section-label">Who I Am</p>
+            <h2 class="section-title">About <em>Me</em></h2>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text reveal">
                     <h3>Joseph Antony Benedict J</h3>
-                    <h4>Full Stack & Mobile Developer</h4>
-                    <p>I'm a passionate B.Tech Information Technology student at Francis Xavier Engineering College (2023-2027), actively positioning myself for SDE, full-stack, and Flutter internship roles.</p>
-                    <p>With a strong interest in clean code, intuitive UI/UX, and designing backend systems and mobile architectures, I build real-world products that solve practical problems. My experience spans across web development with the MERN stack, mobile app development with Flutter, and backend systems with Spring Boot.</p>
+                    <h4>Full Stack &amp; Mobile Developer</h4>
+                    <p>I'm a passionate B.Tech Information Technology student at Francis Xavier Engineering College (2023–2027), actively positioning myself for SDE, full-stack, and Flutter internship roles.</p>
+                    <p>With a strong interest in clean code, intuitive UI/UX, and designing backend systems and mobile architectures, I build real-world products that solve practical problems. My experience spans MERN stack, Flutter, and Spring Boot.</p>
                     <p>Currently working on privacy-by-design implementations and actively sharing my journey with a growing community of 500+ connections on LinkedIn.</p>
                     <div class="about-stats">
                         <div class="stat">
                             <h4>2+</h4>
-                            <p>Years of Experience</p>
+                            <p>Years Coding</p>
                         </div>
                         <div class="stat">
-                            <h4>5+</h4>
-                            <p>Projects Completed</p>
+                            <h4>6+</h4>
+                            <p>Projects Built</p>
                         </div>
                         <div class="stat">
                             <h4>500+</h4>
-                            <p>LinkedIn Connections</p>
+                            <p>LinkedIn</p>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
+                <div class="about-image reveal">
                     <div class="image-placeholder">
+                        <span class="image-corner tl"></span>
+                        <span class="image-corner tr"></span>
+                        <span class="image-corner bl"></span>
+                        <span class="image-corner br"></span>
                         <i class="fas fa-code"></i>
                     </div>
                 </div>
@@ -92,9 +117,10 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-label">What I Know</p>
+            <h2 class="section-title">Skills &amp; <em>Technologies</em></h2>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category reveal">
                     <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">React.js</span>
@@ -104,8 +130,8 @@
                         <span class="skill-tag">REST APIs</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-mobile-alt"></i> Mobile & Backend</h3>
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile &amp; Backend</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Flutter</span>
                         <span class="skill-tag">Node.js</span>
@@ -114,22 +140,22 @@
                         <span class="skill-tag">Firebase</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Database & Tools</h3>
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-database"></i> Database &amp; Tools</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">SQL</span>
                         <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Git/GitHub</span>
-                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Git / GitHub</span>
                         <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">Express.js</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> Programming & Concepts</h3>
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-brain"></i> Programming &amp; Concepts</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Dart</span>
                         <span class="skill-tag">Data Structures</span>
-                        <span class="skill-tag">Clean Code</span>
                         <span class="skill-tag">UI/UX Design</span>
                         <span class="skill-tag">Privacy-by-Design</span>
                     </div>
@@ -141,16 +167,15 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-label">Where I've Worked</p>
+            <h2 class="section-title">Professional <em>Experience</em></h2>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
                     <div class="timeline-content">
-                        <h3>Full Stack & Mobile Application Intern</h3>
+                        <h3>Full Stack &amp; Mobile Application Intern</h3>
                         <h4>Brassy Academy</h4>
-                        <p class="timeline-date"><i class="far fa-calendar"></i> June 2024 - June 2025</p>
+                        <p class="timeline-date">June 2024 — June 2025</p>
                         <ul>
                             <li>Contributing to both web and mobile application projects</li>
                             <li>Developing full-stack solutions using MERN stack</li>
@@ -159,14 +184,12 @@
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
                     <div class="timeline-content">
-                        <h3>Full Stack & Data Privacy Intern</h3>
+                        <h3>Full Stack &amp; Data Privacy Intern</h3>
                         <h4>EvalBench</h4>
-                        <p class="timeline-date"><i class="far fa-calendar"></i> 2024</p>
+                        <p class="timeline-date">2024</p>
                         <ul>
                             <li>Developed MERN-based movie platform with advanced features</li>
                             <li>Implemented cookie consent and DPDP-aligned privacy features</li>
@@ -183,84 +206,140 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-label">What I've Built</p>
+            <h2 class="section-title">Featured <em>Projects</em></h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card reveal">
                     <div class="project-header">
                         <i class="fas fa-suitcase-rolling"></i>
+                        <span class="project-num">01</span>
                     </div>
                     <div class="project-content">
                         <h3>Smart Travel Packing Assistant</h3>
-                        <p>A MERN stack application that integrates live weather APIs to generate smart packing lists with interactive checklists and progress tracking for travelers.</p>
+                        <p>A MERN stack application integrating live weather APIs to generate smart packing lists with interactive checklists and progress tracking for travelers.</p>
                         <div class="project-tags">
-                            <span>React.js</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Weather API</span>
+                            <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>Weather API</span>
                         </div>
                         <div class="project-features">
-                            <h4>Key Features:</h4>
+                            <h4>Key Features</h4>
                             <ul>
                                 <li>Live weather API integration</li>
                                 <li>Smart packing list generation</li>
-                                <li>Interactive checklists</li>
-                                <li>Progress tracking</li>
+                                <li>Interactive checklists with progress tracking</li>
                             </ul>
                         </div>
                     </div>
-                    
                 </div>
 
-                <div class="project-card">
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <i class="fas fa-cloud-sun"></i>
+                        <span class="project-num">02</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Real-Time Weather App</h3>
+                        <p>A responsive weather application that fetches real-time data from a public weather API, allowing users to search cities and view current conditions.</p>
+                        <div class="project-tags">
+                            <span>React.js</span><span>JavaScript</span><span>Weather API</span><span>REST API</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>City-based weather search</li>
+                                <li>Real-time temperature display</li>
+                                <li>Responsive UI for all devices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
                     <div class="project-header">
                         <i class="fas fa-birthday-cake"></i>
+                        <span class="project-num">03</span>
                     </div>
                     <div class="project-content">
                         <h3>Stage Decoration Platform</h3>
-                        <p>A comprehensive marketplace built with Spring Boot, React, and SQL that connects clients with marriage decoration organizers.</p>
+                        <p>A comprehensive marketplace built with Spring Boot, React, and SQL connecting clients with marriage decoration organizers.</p>
                         <div class="project-tags">
-                            <span>Spring Boot</span>
-                            <span>React.js</span>
-                            <span>SQL</span>
-                            <span>REST API</span>
+                            <span>Spring Boot</span><span>React.js</span><span>SQL</span><span>REST API</span>
                         </div>
                         <div class="project-features">
-                            <h4>Key Features:</h4>
+                            <h4>Key Features</h4>
                             <ul>
                                 <li>Advanced search functionality</li>
-                                <li>Package browsing system</li>
                                 <li>Customer dashboard</li>
                                 <li>Organizer management portal</li>
                             </ul>
                         </div>
                     </div>
-                    
                 </div>
 
-                <div class="project-card">
+                <div class="project-card reveal">
                     <div class="project-header">
                         <i class="fas fa-film"></i>
+                        <span class="project-num">04</span>
                     </div>
                     <div class="project-content">
                         <h3>Privacy-First Movie Platform</h3>
                         <p>MERN-based movie platform with cookie consent and DPDP-aligned privacy features, developed during internship at EvalBench.</p>
                         <div class="project-tags">
-                            <span>React.js</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Privacy-by-Design</span>
+                            <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>Privacy-by-Design</span>
                         </div>
                         <div class="project-features">
-                            <h4>Key Features:</h4>
+                            <h4>Key Features</h4>
                             <ul>
                                 <li>Cookie consent management</li>
-                                <li>DPDP compliance</li>
-                                <li>Privacy-by-design architecture</li>
+                                <li>DPDP compliance architecture</li>
                                 <li>User data protection</li>
                             </ul>
                         </div>
                     </div>
-                    
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <i class="fas fa-dumbbell"></i>
+                        <span class="project-num">05</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>FlexiGym Slot Booking Platform</h3>
+                        <p>A cross-platform gym slot booking system with Flutter mobile app and Node.js + MongoDB backend, enabling members to book flexible sessions.</p>
+                        <div class="project-tags">
+                            <span>Flutter</span><span>Dart</span><span>Node.js</span><span>MongoDB</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Role-based access for members &amp; admins</li>
+                                <li>Real-time availability &amp; conflict-free booking</li>
+                                <li>Booking history and analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <i class="fas fa-briefcase"></i>
+                        <span class="project-num">06</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>FreelanceHub – Service Marketplace</h3>
+                        <p>A marketplace platform connecting clients with freelancers, featuring project postings, proposals, and contract workflows with JWT authentication.</p>
+                        <div class="project-tags">
+                            <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>JWT Auth</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Separate dashboards for clients &amp; freelancers</li>
+                                <li>Project posting and proposal management</li>
+                                <li>Role-based authentication</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -268,24 +347,75 @@
     <!-- Certifications Section -->
     <section id="certifications" class="certifications">
         <div class="container">
-            <h2 class="section-title">Certifications & Credentials</h2>
+            <p class="section-label">Credentials</p>
+            <h2 class="section-title">Certifications &amp; <em>Achievements</em></h2>
             <div class="certifications-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-certificate"></i>
+
+                <!-- Python -->
+                <div class="cert-card reveal" data-file="src/assets/certificates/python.pdf" data-type="pdf" data-title="Joy of Computing Using Python">
+                    <div class="cert-thumb">
+                        <div class="cert-thumb-icon"><i class="fab fa-python"></i></div>
+                        <div class="cert-overlay"><span class="cert-overlay-text">View Certificate</span></div>
                     </div>
-                    <h3>Joy of Computing Using Python</h3>
-                    <p class="cert-issuer">NPTEL</p>
-                    <p class="cert-description">Strengthened programming foundations and Python development skills</p>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-certificate"></i>
+                    <div class="cert-info">
+                        <h3>Joy of Computing Using Python</h3>
+                        <p class="cert-issuer">NPTEL</p>
+                        <p class="cert-description">Strengthened programming foundations and Python development skills.</p>
                     </div>
-                    <h3>Industry 4.0 and Industrial IoT</h3>
-                    <p class="cert-issuer">NPTEL</p>
-                    <p class="cert-description">Enhanced industry awareness and understanding of modern industrial technologies</p>
                 </div>
+
+                <!-- IoT -->
+                <div class="cert-card reveal" data-file="src/assets/certificates/iot.pdf" data-type="pdf" data-title="Industry 4.0 and Industrial IoT">
+                    <div class="cert-thumb">
+                        <div class="cert-thumb-icon"><i class="fas fa-microchip"></i></div>
+                        <div class="cert-overlay"><span class="cert-overlay-text">View Certificate</span></div>
+                    </div>
+                    <div class="cert-info">
+                        <h3>Industry 4.0 &amp; Industrial IoT</h3>
+                        <p class="cert-issuer">NPTEL</p>
+                        <p class="cert-description">Enhanced industry awareness and understanding of modern industrial technologies.</p>
+                    </div>
+                </div>
+
+                <!-- Node.js -->
+                <div class="cert-card reveal" data-file="src/assets/certificates/nodejs.png" data-type="image" data-title="Node.js Development">
+                    <div class="cert-thumb">
+                        <img src="src/assets/certificates/nodejs.png" alt="Node.js Certificate" loading="lazy">
+                        <div class="cert-overlay"><span class="cert-overlay-text">View Certificate</span></div>
+                    </div>
+                    <div class="cert-info">
+                        <h3>Node.js Development</h3>
+                        <p class="cert-issuer">Certification</p>
+                        <p class="cert-description">Backend development with Node.js and Express.js.</p>
+                    </div>
+                </div>
+
+                <!-- React -->
+                <div class="cert-card reveal" data-file="src/assets/certificates/React.png" data-type="image" data-title="React.js Development">
+                    <div class="cert-thumb">
+                        <img src="src/assets/certificates/React.png" alt="React Certificate" loading="lazy">
+                        <div class="cert-overlay"><span class="cert-overlay-text">View Certificate</span></div>
+                    </div>
+                    <div class="cert-info">
+                        <h3>React.js Development</h3>
+                        <p class="cert-issuer">Certification</p>
+                        <p class="cert-description">Modern frontend development with React hooks and state management.</p>
+                    </div>
+                </div>
+
+                <!-- Spring Boot -->
+                <div class="cert-card reveal" data-file="src/assets/certificates/springboot.jpeg" data-type="image" data-title="Spring Boot Development">
+                    <div class="cert-thumb">
+                        <img src="src/assets/certificates/springboot.jpeg" alt="Spring Boot Certificate" loading="lazy">
+                        <div class="cert-overlay"><span class="cert-overlay-text">View Certificate</span></div>
+                    </div>
+                    <div class="cert-info">
+                        <h3>Spring Boot Development</h3>
+                        <p class="cert-issuer">Certification</p>
+                        <p class="cert-description">Enterprise Java backend development with Spring Boot framework.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -293,32 +423,33 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-subtitle">I'm currently looking for SDE, Full Stack, and Flutter internship opportunities. Let's connect!</p>
+            <p class="section-label">Let's Talk</p>
+            <h2 class="section-title">Get In <em>Touch</em></h2>
+            <p class="contact-subtitle">I'm looking for SDE, Full Stack, and Flutter internship opportunities. Let's connect!</p>
             <div class="contact-content">
-                <div class="contact-info">
-                    <a href="mailto:joseantoben03@gmail.com" class="contact-item" style="text-decoration: none; color: inherit;">
+                <div class="contact-info reveal">
+                    <a href="mailto:joseantoben03@gmail.com" class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
                             <p>joseantoben03@gmail.com</p>
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="contact-item" style="text-decoration: none; color: inherit;">
+                    <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="contact-item">
                         <i class="fab fa-linkedin"></i>
                         <div>
                             <h4>LinkedIn</h4>
                             <p>500+ Connections</p>
                         </div>
                     </a>
-                    <a href="https://github.com/joseantoben03-dotcom" target="_blank" class="contact-item" style="text-decoration: none; color: inherit;">
+                    <a href="https://github.com/joseantoben03-dotcom" target="_blank" class="contact-item">
                         <i class="fab fa-github"></i>
                         <div>
                             <h4>GitHub</h4>
                             <p>@joseantoben03-dotcom</p>
                         </div>
                     </a>
-                    <a href="https://www.google.com/maps/place/Tirunelveli,+Tamil+Nadu" target="_blank" class="contact-item" style="text-decoration: none; color: inherit;">
+                    <a href="https://www.google.com/maps/place/Tirunelveli,+Tamil+Nadu" target="_blank" class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Location</h4>
@@ -326,7 +457,7 @@
                         </div>
                     </a>
                 </div>
-                <form class="contact-form" id="contact-form">
+                <form class="contact-form reveal" id="contact-form">
                     <div class="form-group">
                         <input type="text" id="name" placeholder="Your Name" required>
                     </div>
@@ -339,8 +470,8 @@
                     <div class="form-group">
                         <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                    <p id="email-success" style=" color: green;"></p>
+                    <button type="submit" class="btn btn-primary"><span>Send Message</span></button>
+                    <p id="email-success"></p>
                 </form>
             </div>
         </div>
@@ -349,7 +480,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Joseph Antony Benedict J. Built with passion and clean code.</p>
+            <p>&copy; 2025 Joseph Antony Benedict J — Built with passion and clean code.</p>
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
