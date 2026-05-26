@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const express = require("express");
-const router = require("./route/user");
-const cors = require("cors");
+const express  = require("express");
+const router   = require("./route/user");
+const cors     = require("cors");
 require("dotenv").config();
 
 const app = express();
@@ -9,8 +9,8 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: "*",
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"]
+  methods: ["GET", "POST", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 

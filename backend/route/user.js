@@ -1,18 +1,16 @@
 const express = require("express");
-const router = express.Router();
-const User = require("../model/user");
+const router  = express.Router();
+const User    = require("../model/user");
 
 // POST /message — save contact form submission
 router.post("/message", async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
 
-    // Validate required fields
     if (!name || !email || !subject || !message) {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    // Basic email format check
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return res.status(400).json({ error: "Invalid email address" });
@@ -29,7 +27,7 @@ router.post("/message", async (req, res) => {
   }
 });
 
-// GET /messages — retrieve all messages (for dashboard)
+// GET /messages — retrieve all messages (dashboard)
 router.get("/messages", async (req, res) => {
   try {
     const messages = await User.find().sort({ createdAt: -1 });
@@ -37,6 +35,21 @@ router.get("/messages", async (req, res) => {
   } catch (err) {
     console.error("Error fetching messages:", err);
     res.status(500).json({ error: "Failed to fetch messages" });
+  }
+});
+
+// DELETE /messages/:id — delete a single message (dashboard)
+router.delete("/messages/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleted = await User.findByIdAndDelete(id);
+    if (!deleted) {
+      return res.status(404).json({ error: "Message not found" });
+    }
+    res.json({ message: "Message deleted successfully" });
+  } catch (err) {
+    console.error("Error deleting message:", err);
+    res.status(500).json({ error: "Failed to delete message" });
   }
 });
 
