@@ -211,22 +211,48 @@ document.addEventListener('keydown', function(e){
 });
 
 /* ========== CONTACT FORM ========== */
+const BACKEND_URL = 'https://portfolio-backend-qb6sfnv9w-joseph-antony-benedict-js-projects.vercel.app';
+
 const form = document.getElementById('contact-form');
 if (form) {
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', async function(e) {
     e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const msg = document.getElementById('email-success');
+
     const data = {
       name: document.getElementById('name').value,
       email: document.getElementById('email').value,
       subject: document.getElementById('subject').value,
       message: document.getElementById('message').value
     };
-    console.log('Form Data:', data);
-    const msg = document.getElementById('email-success');
-    if (msg) {
-      msg.textContent = '✓ Message sent successfully!';
-      msg.classList.remove('error');
+
+    // Disable button while sending
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+    try {
+      const res = await fetch(`${BACKEND_URL}/message`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      if (msg) {
+        msg.textContent = '✓ Message sent successfully!';
+        msg.classList.remove('error');
+      }
+      form.reset();
+    } catch (err) {
+      if (msg) {
+        msg.textContent = '✗ Failed to send. Please try again.';
+        msg.classList.add('error');
+      }
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
     }
-    form.reset();
   });
 }

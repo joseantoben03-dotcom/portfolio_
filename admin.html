@@ -460,8 +460,7 @@
         </tr>`;
 
       try {
-        const res  = await fetch("https://portfolio-backend-qb6sfnv9w-joseph-antony-benedict-js-projects.vercel.app/fetch");
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const res  = await fetch("https://portfolio-backend-qb6sfnv9w-joseph-antony-benedict-js-projects.vercel.app/fetch");        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
 
         allUsers = data.U || [];
@@ -486,7 +485,7 @@
               </span>
               <p class="state-label" style="color:var(--danger)">FAILED TO LOAD — ${err.message}</p>
               <p style="font-size:0.75rem;color:var(--text-dim);margin-top:0.5rem">
-              Make sure your Vercel backend is reachable
+                Make sure your server is running on localhost:3000
               </p>
             </td>
           </tr>`;
