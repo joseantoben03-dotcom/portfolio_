@@ -1,0 +1,26 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="bg7" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#111820"/><stop offset="100%" style="stop-color:#1a1a2e"/></linearGradient></defs>
+  <rect width="400" height="200" fill="url(#bg7)"/>
+  <circle cx="200" cy="85" r="72" fill="rgba(255,102,0,0.06)"/>
+  <circle cx="148" cy="60" r="18" fill="rgba(255,102,0,0.15)" stroke="#ff6600" stroke-width="2"/>
+  <path d="M116,106 Q148,86 180,106" stroke="#ff6600" stroke-width="2" fill="none"/>
+  <circle cx="252" cy="60" r="18" fill="rgba(255,102,0,0.15)" stroke="#ff6600" stroke-width="2"/>
+  <path d="M220,106 Q252,86 284,106" stroke="#ff6600" stroke-width="2" fill="none"/>
+  <line x1="166" y1="60" x2="234" y2="60" stroke="rgba(255,102,0,0.4)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="187" y="48" width="26" height="24" rx="4" fill="rgba(255,102,0,0.2)" stroke="#ff8533" stroke-width="1.5"/>
+  <text x="200" y="65" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle" fill="#ff6600">&#129309;</text>
+  <rect x="136" y="80" width="24" height="18" rx="3" fill="none" stroke="#ff8533" stroke-width="1.5"/>
+  <rect x="141" y="76" width="14" height="6" rx="2" fill="none" stroke="#ff8533" stroke-width="1.5"/>
+  <rect x="240" y="80" width="24" height="18" rx="3" fill="none" stroke="#ff8533" stroke-width="1.5"/>
+  <rect x="245" y="76" width="14" height="6" rx="2" fill="none" stroke="#ff8533" stroke-width="1.5"/>
+  <rect x="100" y="114" width="200" height="24" rx="4" fill="rgba(255,102,0,0.15)" stroke="rgba(255,102,0,0.3)" stroke-width="1"/>
+  <text x="200" y="131" font-family="Poppins,sans-serif" font-size="12" font-weight="600" fill="#ff6600" text-anchor="middle">FreelanceHub Marketplace</text>
+  <rect x="30" y="146" width="58" height="16" rx="8" fill="rgba(255,102,0,0.12)"/>
+  <text x="59" y="158" font-family="sans-serif" font-size="9" fill="#ff9500" text-anchor="middle">React.js</text>
+  <rect x="96" y="146" width="56" height="16" rx="8" fill="rgba(255,102,0,0.12)"/>
+  <text x="124" y="158" font-family="sans-serif" font-size="9" fill="#ff9500" text-anchor="middle">Node.js</text>
+  <rect x="160" y="146" width="60" height="16" rx="8" fill="rgba(255,102,0,0.12)"/>
+  <text x="190" y="158" font-family="sans-serif" font-size="9" fill="#ff9500" text-anchor="middle">MongoDB</text>
+  <rect x="228" y="146" width="64" height="16" rx="8" fill="rgba(255,102,0,0.12)"/>
+  <text x="260" y="158" font-family="sans-serif" font-size="9" fill="#ff9500" text-anchor="middle">JWT Auth</text>
+</svg>

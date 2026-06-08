@@ -42,30 +42,46 @@
       </div>
     </div>
   </nav>
-
   <section id="home" class="hero">
     <div class="hero-orb hero-orb-1"></div>
     <div class="hero-orb hero-orb-2"></div>
     <div class="hero-orb hero-orb-3"></div>
     <div class="hero-grid"></div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-pulse"></span>
-        Available for Internships
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge"><span class="badge-pulse"></span> Available for Internships</div>
+        <p class="hero-name">Hi, I am</p>
+        <h3 class="hero-title">Joseph<br><em class="highlight">Antony Benedict</em></h>
+        <p class="hero-subtitle">Full Stack &amp; Mobile Developer crafting scalable web and mobile applications with MERN stack, Flutter, and Spring Boot</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary"><span>View Projects</span><i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-secondary">Hire Me</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/joseph-antony-benedict-j-627667368" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/joseantoben03-dotcom" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:joseantoben03@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><h4>3+</h4><p>Internships</p></div>
+          <div class="hero-stat"><h4>7+</h4><p>Projects Built</p></div>
+          <div class="hero-stat"><h4>10+</h4><p>Certificates</p></div>
+          <div class="hero-stat"><h4>500+</h4><p>LinkedIn</p></div>
+        </div>
       </div>
-      <h1 class="hero-title">
-        Joseph<br><em class="highlight">Antony Benedict</em>
-      </h1>
-      <p class="hero-subtitle">Full Stack &amp; Mobile Developer crafting scalable web and mobile applications with MERN stack, Flutter, and Spring Boot</p>
-      <p class="hero-description">B.Tech IT · Francis Xavier Engineering College · 500+ LinkedIn Connections</p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary"><span>View Projects</span><i class="fas fa-arrow-right"></i></a>
-        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-      </div>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/joseantoben03-dotcom" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="mailto:joseantoben03@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <div class="hero-image-col">
+        <div class="hero-img-wrap">
+          <div class="hero-img-ring hero-img-ring-1"></div>
+          <div class="hero-img-ring hero-img-ring-2"></div>
+          <div class="hero-img-ring hero-img-ring-3"></div>
+          <div class="hero-img-circle">
+            <img src="src/assets/profile/profile.png" alt="Joseph Antony Benedict J" draggable="false">
+          </div>
+          <div class="hero-img-badge">
+            <span class="badge-pulse"></span>
+            <span>Available for Hire</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="scroll-indicator">
@@ -73,6 +89,7 @@
       <span>Scroll</span>
     </div>
   </section>
+
 
   <section id="about" class="about">
     <div class="container">
@@ -110,62 +127,171 @@
               <div class="ring ring-1"></div>
               <div class="ring ring-2"></div>
             </div>
-            <i class="fas fa-code"></i>
+            <i class="fas fa-code" id="adminTrigger" title=""></i>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Admin Password Modal -->
+  <div id="adminModal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);align-items:center;justify-content:center;">
+    <div style="background:#181818;border:1px solid rgba(255,102,0,0.3);border-radius:10px;padding:2.5rem 2rem;width:100%;max-width:360px;position:relative;box-shadow:0 0 60px rgba(255,102,0,0.2);">
+      <!-- Close -->
+      <button onclick="closeAdminModal()" style="position:absolute;top:1rem;right:1rem;background:transparent;border:1px solid rgba(255,255,255,0.1);color:#666;width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;"><i class="fas fa-times"></i></button>
+      <!-- Header -->
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;">
+        <div style="width:40px;height:40px;background:rgba(255,102,0,0.12);border:1px solid rgba(255,102,0,0.25);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ff6600;">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div>
+          <h3 style="font-family:'Poppins',sans-serif;font-size:1rem;font-weight:600;color:#fff;margin:0;">Admin Access</h3>
+          <p style="font-family:'Space Mono',monospace;font-size:0.58rem;color:#666;letter-spacing:0.12em;margin:0;">RESTRICTED AREA</p>
+        </div>
+      </div>
+      <!-- Input -->
+      <div style="margin-bottom:1rem;">
+        <label style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:#666;display:block;margin-bottom:0.5rem;">Password</label>
+        <div style="position:relative;">
+          <input id="adminPassInput" type="password" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')verifyAdmin()" style="width:100%;padding:0.85rem 3rem 0.85rem 1rem;background:#111;border:1px solid rgba(255,255,255,0.08);color:#fff;border-radius:6px;font-family:'Poppins',sans-serif;font-size:0.88rem;outline:none;transition:border 0.3s;box-sizing:border-box;" onfocus="this.style.borderColor='rgba(255,102,0,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+          <button onclick="toggleAdminPass()" style="position:absolute;right:0.85rem;top:50%;transform:translateY(-50%);background:none;border:none;color:#666;cursor:pointer;font-size:0.85rem;" id="togglePassBtn"><i class="fas fa-eye"></i></button>
+        </div>
+      </div>
+      <!-- Error msg -->
+      <p id="adminError" style="font-family:'Space Mono',monospace;font-size:0.62rem;color:#ef4444;letter-spacing:0.08em;min-height:1rem;margin-bottom:1rem;display:none;"><i class="fas fa-times-circle"></i> Incorrect password. Try again.</p>
+      <!-- Submit -->
+      <button onclick="verifyAdmin()" style="width:100%;padding:0.9rem;background:#ff6600;color:#fff;border:none;border-radius:6px;font-family:'Poppins',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.3s;letter-spacing:0.05em;" onmouseover="this.style.background='#ff8533'" onmouseout="this.style.background='#ff6600'">
+        <i class="fas fa-unlock-alt"></i> &nbsp;Access Dashboard
+      </button>
+      <!-- hint dots -->
+      <div style="text-align:center;margin-top:1.25rem;">
+        <span style="font-family:'Space Mono',monospace;font-size:0.55rem;color:#333;letter-spacing:0.15em;">SECURED WITH AES-256</span>
+      </div>
+    </div>
+  </div>
+
   <section id="skills" class="skills">
     <div class="container">
       <p class="section-label">What I Know</p>
       <h2 class="section-title">Skills &amp; <em>Technologies</em></h2>
       <div class="skills-grid">
+
         <div class="skill-category reveal">
-          <div class="skill-cat-icon"><i class="fas fa-laptop-code"></i></div>
-          <h3>Web Development</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">React.js</span>
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
-            <span class="skill-tag">Bootstrap</span>
-            <span class="skill-tag">REST APIs</span>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-globe"></i></div>
+            <h3>Frontend Development</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></div>
+              <span>React.js</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"></div>
+              <span>HTML5</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"></div>
+              <span>CSS3</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"></div>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"></div>
+              <span>Bootstrap</span>
+            </div>
           </div>
         </div>
+
         <div class="skill-category reveal">
-          <div class="skill-cat-icon"><i class="fas fa-mobile-alt"></i></div>
-          <h3>Mobile &amp; Backend</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Flutter</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Spring Boot</span>
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">Firebase</span>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3>Mobile &amp; Backend</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"></div>
+              <span>Flutter</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"></div>
+              <span>Node.js</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" style="filter:invert(1)"></div>
+              <span>Express.js</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot"></div>
+              <span>Spring Boot</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart"></div>
+              <span>Dart</span>
+            </div>
           </div>
         </div>
+
         <div class="skill-category reveal">
-          <div class="skill-cat-icon"><i class="fas fa-database"></i></div>
-          <h3>Database &amp; Tools</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">Git / GitHub</span>
-            <span class="skill-tag">Firebase</span>
-            <span class="skill-tag">Express.js</span>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-database"></i></div>
+            <h3>Database &amp; Tools</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"></div>
+              <span>MongoDB</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"></div>
+              <span>SQL / MySQL</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"></div>
+              <span>Firebase</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div>
+              <span>Git / GitHub</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"></div>
+              <span>VS Code</span>
+            </div>
           </div>
         </div>
+
         <div class="skill-category reveal">
-          <div class="skill-cat-icon"><i class="fas fa-brain"></i></div>
-          <h3>Programming &amp; Concepts</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Dart</span>
-            <span class="skill-tag">Data Structures</span>
-            <span class="skill-tag">UI/UX Design</span>
-            <span class="skill-tag">Privacy-by-Design</span>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+            <h3>Programming Languages</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div>
+              <span>Python</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"></div>
+              <span>Java</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"></div>
+              <span>C++</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"></div>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-icon"><i class="fas fa-shield-alt" style="color:#ff6600;font-size:1.1rem"></i></div>
+              <span>Privacy-by-Design</span>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -175,36 +301,47 @@
       <p class="section-label">Where I've Worked</p>
       <h2 class="section-title">Professional <em>Experience</em></h2>
       <div class="timeline">
+
         <div class="timeline-item reveal">
           <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
           <div class="timeline-content">
-            <div class="timeline-badge">Current</div>
-            <h3>Full Stack &amp; Mobile Application Intern</h3>
-            <h4>Brassy Academy</h4>
-            <p class="timeline-date"><i class="far fa-calendar"></i> June 2024 — June 2025</p>
-            <ul>
-              <li>Contributing to both web and mobile application projects</li>
-              <li>Developing full-stack solutions using MERN stack</li>
-              <li>Building cross-platform mobile applications with Flutter</li>
-              <li>Implementing modern UI/UX practices and responsive designs</li>
-            </ul>
-          </div>
-        </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
-          <div class="timeline-content">
+            <div class="timeline-badge">Latest</div>
             <h3>Full Stack &amp; Data Privacy Intern</h3>
-            <h4>EvalBench</h4>
-            <p class="timeline-date"><i class="far fa-calendar"></i> 2024</p>
+            <h4>Evalbench &mdash; Thoothukudi</h4>
+            <p class="timeline-date"><i class="far fa-calendar"></i> Dec 2025 &ndash; Jan 2026</p>
             <ul>
-              <li>Developed MERN-based movie platform with advanced features</li>
-              <li>Implemented cookie consent and DPDP-aligned privacy features</li>
-              <li>Worked on privacy-by-design implementations</li>
-              <li>Built scalable backend systems with Node.js and MongoDB</li>
-              <li>Created intuitive user interfaces with React.js</li>
+              <li>Delivered 5+ production features in React.js and Node.js, reducing defects by 30% and auditing 15+ API endpoints for regulatory compliance.</li>
+              <li>Enforced data privacy standards including input validation, encrypted storage, and role-based access control across 3 core modules.</li>
             </ul>
           </div>
         </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-content">
+            <h3>Full Stack Intern</h3>
+            <h4>Brassy Technologies Private Limited</h4>
+            <p class="timeline-date"><i class="far fa-calendar"></i> June 2025 &ndash; July 2025</p>
+            <ul>
+              <li>Shipped 8+ ReactJS components with Express.js APIs, improving frontend load speed by 25% and reducing API response time by 20%.</li>
+              <li>Optimized MongoDB schemas and completed all deliverables across 4 agile sprints on schedule, achieving a zero-delay product release.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-content">
+            <h3>Mobile Application Intern</h3>
+            <h4>Brassy Technologies Private Limited</h4>
+            <p class="timeline-date"><i class="far fa-calendar"></i> June 2024 &ndash; July 2024</p>
+            <ul>
+              <li>Developed 6+ Flutter screens with GetX, integrated 4 REST API endpoints with asynchronous handling, and cut rendering time by 15%.</li>
+              <li>Ran QA across 3 Android configurations, confirming consistent UI behavior and zero layout breaks across all tested screen sizes.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -214,12 +351,15 @@
       <p class="section-label">What I've Built</p>
       <h2 class="section-title">Featured <em>Projects</em></h2>
       <div class="projects-grid">
+
+        <!-- 01 EduPath -->
         <div class="project-card reveal featured-card">
           <div class="project-glow"></div>
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80&fit=crop&crop=top" alt="EduPath" loading="lazy" style="object-position:center 30%">
+          </div>
           <div class="project-header">
-            <div class="project-icon-wrap">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
+            <div class="project-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
             <div class="project-meta">
               <span class="project-num">01</span>
               <span class="project-badge badge-new">New</span>
@@ -244,12 +384,14 @@
           </div>
         </div>
 
+        <!-- 02 FlexiGym -->
         <div class="project-card reveal featured-card">
           <div class="project-glow"></div>
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&fit=crop&crop=center" alt="FlexiGym" loading="lazy" style="object-position:center 40%">
+          </div>
           <div class="project-header">
-            <div class="project-icon-wrap">
-              <i class="fas fa-dumbbell"></i>
-            </div>
+            <div class="project-icon-wrap"><i class="fas fa-dumbbell"></i></div>
             <div class="project-meta">
               <span class="project-num">02</span>
               <span class="project-badge badge-mobile">Flutter</span>
@@ -274,7 +416,11 @@
           </div>
         </div>
 
+        <!-- 03 Smart Travel -->
         <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80&fit=crop&crop=center" alt="Smart Travel" loading="lazy" style="object-position:center 60%">
+          </div>
           <div class="project-header">
             <div class="project-icon-wrap"><i class="fas fa-suitcase-rolling"></i></div>
             <div class="project-meta"><span class="project-num">03</span></div>
@@ -288,15 +434,19 @@
             <div class="project-features">
               <h4>Key Features</h4>
               <ul>
-                <li>Live weather API integration</li>
-                <li>Smart packing list generation</li>
+                <li>Live weather API integration for destination-based packing</li>
+                <li>Smart packing list auto-generation</li>
                 <li>Interactive checklists with progress tracking</li>
               </ul>
             </div>
           </div>
         </div>
 
+        <!-- 04 Stage Decoration -->
         <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&fit=crop&crop=center" alt="Stage Decoration" loading="lazy" style="object-position:center 35%">
+          </div>
           <div class="project-header">
             <div class="project-icon-wrap"><i class="fas fa-birthday-cake"></i></div>
             <div class="project-meta"><span class="project-num">04</span></div>
@@ -310,21 +460,25 @@
             <div class="project-features">
               <h4>Key Features</h4>
               <ul>
-                <li>Advanced search &amp; filter functionality</li>
-                <li>Customer dashboard</li>
-                <li>Organizer management portal</li>
+                <li>Advanced search &amp; filter by event type and budget</li>
+                <li>Customer dashboard with booking management</li>
+                <li>Organizer portal for listing management</li>
               </ul>
             </div>
           </div>
         </div>
 
+        <!-- 05 Privacy Movie -->
         <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=800&q=80&fit=crop&crop=center" alt="Privacy Movie" loading="lazy" style="object-position:center 50%">
+          </div>
           <div class="project-header">
             <div class="project-icon-wrap"><i class="fas fa-film"></i></div>
             <div class="project-meta"><span class="project-num">05</span></div>
           </div>
           <div class="project-content">
-            <h3>Privacy-First Movie Platform</h3>
+            <h3><a href="https://movieclone-frontend.vercel.app" target="_blank" style="color:inherit;text-decoration:none;">Privacy-First Movie Platform <i class="fas fa-external-link-alt" style="font-size:0.75rem;opacity:0.5"></i></a></h3>
             <p>MERN-based movie platform with cookie consent and DPDP-aligned privacy features, developed during internship at EvalBench.</p>
             <div class="project-tags">
               <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>Privacy-by-Design</span>
@@ -332,15 +486,19 @@
             <div class="project-features">
               <h4>Key Features</h4>
               <ul>
-                <li>Cookie consent management</li>
-                <li>DPDP compliance architecture</li>
-                <li>User data protection</li>
+                <li>Cookie consent management &amp; DPDP compliance</li>
+                <li>Role-based access control across modules</li>
+                <li>Encrypted storage &amp; data privacy architecture</li>
               </ul>
             </div>
           </div>
         </div>
 
+        <!-- 06 Weather App -->
         <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80&fit=crop&crop=center" alt="Weather App" loading="lazy" style="object-position:center 40%">
+          </div>
           <div class="project-header">
             <div class="project-icon-wrap"><i class="fas fa-cloud-sun"></i></div>
             <div class="project-meta"><span class="project-num">06</span></div>
@@ -354,17 +512,21 @@
             <div class="project-features">
               <h4>Key Features</h4>
               <ul>
-                <li>City-based weather search</li>
-                <li>Real-time temperature display</li>
-                <li>Responsive UI for all devices</li>
+                <li>City-based weather search with autocomplete</li>
+                <li>Real-time temperature, humidity &amp; wind display</li>
+                <li>Fully responsive UI for all screen sizes</li>
               </ul>
             </div>
           </div>
         </div>
 
+        <!-- 07 FreelanceHub -->
         <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&fit=crop&crop=center" alt="FreelanceHub" loading="lazy" style="object-position:center 30%">
+          </div>
           <div class="project-header">
-            <div class="project-icon-wrap"><i class="fas fa-briefcase"></i></div>
+            <div class="project-icon-wrap"><i class="fas fa-handshake"></i></div>
             <div class="project-meta"><span class="project-num">07</span></div>
           </div>
           <div class="project-content">
@@ -378,11 +540,12 @@
               <ul>
                 <li>Separate dashboards for clients &amp; freelancers</li>
                 <li>Project posting and proposal management</li>
-                <li>Role-based authentication</li>
+                <li>Role-based JWT authentication</li>
               </ul>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -392,10 +555,16 @@
       <p class="section-label">Credentials</p>
       <h2 class="section-title">Certifications &amp; <em>Achievements</em></h2>
       <div class="certifications-grid">
-        <div class="cert-card reveal" data-file="src/assets/certificates/python.png" data-type="png" data-title="Joy of Computing Using Python">
+
+        <!-- Python -->
+        <div class="cert-card reveal" data-file="src/assets/certificates/python.png" data-type="image" data-title="Joy of Computing Using Python">
           <div class="cert-thumb">
-            <div class="cert-thumb-icon"><i class="fab fa-python"></i></div>
-            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-eye"></i> View</span></div>
+            <img src="src/assets/certificates/python.png" alt="Python Certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="cert-thumb-icon-wrap" style="display:none">
+              <i class="fab fa-python"></i>
+              <span class="cert-thumb-label">Python</span>
+            </div>
+            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-expand-alt"></i> View Certificate</span></div>
           </div>
           <div class="cert-info">
             <h3>Joy of Computing Using Python</h3>
@@ -404,34 +573,49 @@
           </div>
         </div>
 
+        <!-- IoT -->
         <div class="cert-card reveal" data-file="src/assets/certificates/iot.png" data-type="image" data-title="Industry 4.0 and Industrial IoT">
           <div class="cert-thumb">
-            <div class="cert-thumb-icon"><i class="fas fa-microchip"></i></div>
-            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-eye"></i> View</span></div>
+            <img src="src/assets/certificates/iot.png" alt="IoT Certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="cert-thumb-icon-wrap" style="display:none">
+              <i class="fas fa-microchip"></i>
+              <span class="cert-thumb-label">IoT</span>
+            </div>
+            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-expand-alt"></i> View Certificate</span></div>
           </div>
           <div class="cert-info">
             <h3>Industry 4.0 &amp; Industrial IoT</h3>
             <p class="cert-issuer"><i class="fas fa-award"></i> NPTEL</p>
-            <p class="cert-description">Enhanced understanding of modern industrial technologies.</p>
+            <p class="cert-description">Enhanced understanding of modern industrial technologies and IoT systems.</p>
           </div>
         </div>
 
+        <!-- Node.js -->
         <div class="cert-card reveal" data-file="src/assets/certificates/nodejs.png" data-type="image" data-title="Node.js Development">
           <div class="cert-thumb">
-            <img src="src/assets/certificates/nodejs.png" alt="Node.js Certificate" loading="lazy">
-            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-eye"></i> View</span></div>
+            <img src="src/assets/certificates/nodejs.png" alt="Node.js Certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="cert-thumb-icon-wrap" style="display:none">
+              <i class="fab fa-node-js"></i>
+              <span class="cert-thumb-label">Node.js</span>
+            </div>
+            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-expand-alt"></i> View Certificate</span></div>
           </div>
           <div class="cert-info">
             <h3>Node.js Development</h3>
             <p class="cert-issuer"><i class="fas fa-award"></i> Certification</p>
-            <p class="cert-description">Backend development with Node.js and Express.js.</p>
+            <p class="cert-description">Backend development with Node.js and Express.js framework.</p>
           </div>
         </div>
 
+        <!-- React -->
         <div class="cert-card reveal" data-file="src/assets/certificates/React.png" data-type="image" data-title="React.js Development">
           <div class="cert-thumb">
-            <img src="src/assets/certificates/React.png" alt="React Certificate" loading="lazy">
-            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-eye"></i> View</span></div>
+            <img src="src/assets/certificates/React.png" alt="React Certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="cert-thumb-icon-wrap" style="display:none">
+              <i class="fab fa-react"></i>
+              <span class="cert-thumb-label">React.js</span>
+            </div>
+            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-expand-alt"></i> View Certificate</span></div>
           </div>
           <div class="cert-info">
             <h3>React.js Development</h3>
@@ -440,10 +624,15 @@
           </div>
         </div>
 
+        <!-- Spring Boot -->
         <div class="cert-card reveal" data-file="src/assets/certificates/springboot.jpeg" data-type="image" data-title="Spring Boot Development">
           <div class="cert-thumb">
-            <img src="src/assets/certificates/springboot.jpeg" alt="Spring Boot Certificate" loading="lazy">
-            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-eye"></i> View</span></div>
+            <img src="src/assets/certificates/springboot.jpeg" alt="Spring Boot Certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="cert-thumb-icon-wrap" style="display:none">
+              <i class="fas fa-leaf"></i>
+              <span class="cert-thumb-label">Spring Boot</span>
+            </div>
+            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-expand-alt"></i> View Certificate</span></div>
           </div>
           <div class="cert-info">
             <h3>Spring Boot Development</h3>
@@ -451,6 +640,72 @@
             <p class="cert-description">Enterprise Java backend development with Spring Boot framework.</p>
           </div>
         </div>
+
+        <!-- AI -->
+        <div class="cert-card reveal" data-file="src/assets/certificates/Ai.pdf" data-type="pdf" data-title="Clawdbot — Build Real-World AI Agents Without Coding">
+          <div class="cert-thumb">
+            <img src="src/assets/certificates/ai_thumb.jpg" alt="AI Certificate" loading="lazy">
+            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-expand-alt"></i> View Certificate</span></div>
+          </div>
+          <div class="cert-info">
+            <h3>Build Real-World AI Agents</h3>
+            <p class="cert-issuer"><i class="fas fa-award"></i> School of AI</p>
+            <p class="cert-description">Completed Clawdbot — Building AI Agents Without Coding.</p>
+          </div>
+        </div>
+
+        <!-- C++ -->
+        <div class="cert-card reveal" data-file="src/assets/certificates/c++.pdf" data-type="pdf" data-title="C++ Programming">
+          <div class="cert-thumb">
+            <img src="src/assets/certificates/cpp_thumb.jpg" alt="C++ Certificate" loading="lazy">
+            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-expand-alt"></i> View Certificate</span></div>
+          </div>
+          <div class="cert-info">
+            <h3>C++ Programming</h3>
+            <p class="cert-issuer"><i class="fas fa-award"></i> Certification</p>
+            <p class="cert-description">Object-oriented programming and system-level development with C++.</p>
+          </div>
+        </div>
+
+        <!-- ChatGPT -->
+        <div class="cert-card reveal" data-file="src/assets/certificates/chatgpt.pdf" data-type="pdf" data-title="ChatGPT Mastery 2024 — Prompt Engineering">
+          <div class="cert-thumb">
+            <img src="src/assets/certificates/chatgpt_thumb.jpg" alt="ChatGPT Certificate" loading="lazy">
+            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-expand-alt"></i> View Certificate</span></div>
+          </div>
+          <div class="cert-info">
+            <h3>ChatGPT Mastery &amp; Prompt Engineering</h3>
+            <p class="cert-issuer"><i class="fas fa-award"></i> Udemy</p>
+            <p class="cert-description">Practical prompt engineering and generative AI with ChatGPT.</p>
+          </div>
+        </div>
+
+        <!-- Linux -->
+        <div class="cert-card reveal" data-file="src/assets/certificates/linux.pdf" data-type="pdf" data-title="Linux Administration & Command Line">
+          <div class="cert-thumb">
+            <img src="src/assets/certificates/linux_thumb.jpg" alt="Linux Certificate" loading="lazy">
+            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-expand-alt"></i> View Certificate</span></div>
+          </div>
+          <div class="cert-info">
+            <h3>Linux Administration &amp; Command Line</h3>
+            <p class="cert-issuer"><i class="fas fa-award"></i> Udemy</p>
+            <p class="cert-description">Command-line proficiency, shell scripting, and Linux system administration.</p>
+          </div>
+        </div>
+
+        <!-- SQL -->
+        <div class="cert-card reveal" data-file="src/assets/certificates/sql.pdf" data-type="pdf" data-title="SQL & Database Management">
+          <div class="cert-thumb">
+            <img src="src/assets/certificates/sql_thumb.jpg" alt="SQL Certificate" loading="lazy">
+            <div class="cert-overlay"><span class="cert-overlay-text"><i class="fas fa-expand-alt"></i> View Certificate</span></div>
+          </div>
+          <div class="cert-info">
+            <h3>SQL &amp; Database Management</h3>
+            <p class="cert-issuer"><i class="fas fa-award"></i> Certification</p>
+            <p class="cert-description">Relational database design, queries, and database management systems.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -531,32 +786,6 @@
     </div>
   </footer>
 
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("nav-menu");
-    const form = document.getElementById("contact-form");
-
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-    });
-
-    document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
-
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const data = {
-          name: document.getElementById("name").value,
-          email: document.getElementById("email").value,
-          subject: document.getElementById("subject").value,
-          message: document.getElementById("message").value
-        };
-        console.log("Form Data:", data);
-        const msg = document.getElementById("email-success");
-        if (msg) msg.textContent = "Message captured successfully.";
-        form.reset();
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
