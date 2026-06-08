@@ -235,7 +235,9 @@ if (form) {
       const res = await fetch(`${BACKEND_URL}/message`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        mode: 'cors',
+        credentials: 'omit'
       });
 
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
